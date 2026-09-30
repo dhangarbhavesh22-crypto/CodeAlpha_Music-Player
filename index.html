@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Player</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="player" aria-label="Music player">
+  <div class="disc" id="disc" aria-hidden="true"><span></span></div>
+
+  <div class="meta">
+    <h1 id="title">Song title</h1>
+    <p id="artist">Artist</p>
+  </div>
+
+  <div class="progress">
+    <span id="current">0:00</span>
+    <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Seek">
+    <span id="duration">0:00</span>
+  </div>
+
+  <div class="controls">
+    <button id="prev" aria-label="Previous song">⏮</button>
+    <button id="play" class="play" aria-label="Play">▶</button>
+    <button id="next" aria-label="Next song">⏭</button>
+  </div>
+
+  <div class="volume">
+    <button id="mute" aria-label="Mute">🔊</button>
+    <input type="range" id="vol" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+  </div>
+
+  <div class="list-head">
+    <h2>Playlist</h2>
+    <label class="auto"><input type="checkbox" id="autoplay" checked> Autoplay next</label>
+  </div>
+  <ul class="playlist" id="playlist"></ul>
+
+  <label class="add">Add your own songs
+    <input type="file" id="files" accept="audio/*" multiple>
+  </label>
+  <p class="status" id="status" role="status"></p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
